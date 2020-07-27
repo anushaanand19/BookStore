@@ -1,0 +1,13 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/shop.css")
+    link(rel="stylesheet", href="/cart.css")
+
+block content
+    if products.length > 0 
+        each prod in products
+            .cart-container
+                p.card-text.cart-item #{prod.title}
+                p.card-text.cart-item #{prod.price}
+                p.card-text.cart-item #{prod.cartItem.Quantity}
